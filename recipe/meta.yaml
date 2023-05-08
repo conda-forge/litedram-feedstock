@@ -1,17 +1,15 @@
 {% set name = "litedram" %}
-{% set version = "2022.12" %}
-{% set sha256 = "6433bed8aa7e4e28dd82cf4b4cf9163511e5182af4f29f66b720d51596e03ba9" %}
+{% set version = "2023.04" %}
+{% set sha256 = "f80174774521ccc1fb9ae6546cce307bb45ba957ec96ab71ecb2ac2e0bf85403" %}
 
 package:
-   name: {{ name|lower }}
-   version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   fn: {{ version }}.tar.gz
   url: https://github.com/enjoy-digital/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - patches/0001-add-manifest-uplift-setup.py-to-pass-twine-checks.patch
 
 build:
   number: 0
