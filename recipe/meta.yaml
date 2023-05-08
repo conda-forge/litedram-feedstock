@@ -10,8 +10,6 @@ source:
   fn: {{ version }}.tar.gz
   url: https://github.com/enjoy-digital/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - patches/0001-add-manifest-uplift-setup.py-to-pass-twine-checks.patch
 
 build:
   number: 0
