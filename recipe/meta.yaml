@@ -1,6 +1,6 @@
 {% set name = "litedram" %}
-{% set version = "2023.04" %}
-{% set sha256 = "f80174774521ccc1fb9ae6546cce307bb45ba957ec96ab71ecb2ac2e0bf85403" %}
+{% set version = "2023.08" %}
+{% set sha256 = "e44ee44f049cc70027f204f1df50d582b2516d6d10fd845d52e7a8d008d0a735" %}
 
 package:
   name: {{ name|lower }}
@@ -24,7 +24,8 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - litex
+    - litex >=2023.08
+    - packaging
     - pyyaml
 
 test:
