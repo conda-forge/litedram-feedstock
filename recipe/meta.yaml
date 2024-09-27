@@ -25,7 +25,7 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - litex {{ version }}
+    - litex ~={{ version }}*
     - packaging
     - pyyaml
 
