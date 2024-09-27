@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   entry_points:
     - litedram_gen = litedram.gen:main
 
@@ -22,9 +22,10 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools
   run:
     - python >=3.7
-    - litex >=2024.04
+    - litex ={{ version }}
     - packaging
     - pyyaml
 
