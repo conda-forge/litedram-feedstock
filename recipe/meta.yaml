@@ -1,6 +1,6 @@
 {% set name = "litedram" %}
-{% set version = "2024.08" %}
-{% set sha256 = "f04f0fd46c152900fa56ec503a6d76b030fd921eec1f866e6db64a9c5f4ce53c" %}
+{% set version = "2024.12" %}
+{% set sha256 = "bbcb92927f3937de34058894c1402b9f7aee8d16d76fd30b96fbe0ea8cca4b26" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   entry_points:
