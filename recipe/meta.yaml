@@ -1,6 +1,6 @@
 {% set name = "litedram" %}
-{% set version = "2025.04" %}
-{% set sha256 = "be1de1639651dfec4c748d06dbc446551f9162b05321a1df1a3e0bc12474fc06" %}
+{% set version = "2025.08" %}
+{% set sha256 = "d377cf801870e700e1c2f71322b57c88e61015c0297a25a0d7347c7420eb3477" %}
 
 package:
   name: {{ name|lower }}
