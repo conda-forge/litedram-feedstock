@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: litedram
+  version: "2026.04"
+  sha256: 0d2f9ba07639bc0fff50ccf76a1ffa144db88b871f5b3914b06e0b42f9ff4e07
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/enjoy-digital/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
+  python:
+    entry_points:
+      - litedram_gen = litedram.gen:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - litex ~=${{ version }}
+    - packaging
+    - pyyaml
+
+tests:
+  - python:
+      imports:
+        - litedram
+      pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - litedram_gen --help
+
+about:
+  license: BSD-2-Clause
+  license_file: LICENSE
+  summary: Small footprint and configurable DRAM core
+  description: Small footprint and configurable DRAM core
+  homepage: https://github.com/enjoy-digital/litedram
+  repository: https://github.com/enjoy-digital/litedram
+
+extra:
+  recipe-maintainers:
+    - enjoy-digital
+    - timkpaine
