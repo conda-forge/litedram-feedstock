@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: litedram
-  version: "2026.04"
-  sha256: 0d2f9ba07639bc0fff50ccf76a1ffa144db88b871f5b3914b06e0b42f9ff4e07
+  version: "2026.08"
+  sha256: 8e1850c4a978c4814fa7e8b862eb2015440c404c56f15151a52635bbdb5f2763
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   python:
